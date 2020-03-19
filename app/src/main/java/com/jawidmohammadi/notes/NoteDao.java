@@ -1,5 +1,6 @@
 package com.jawidmohammadi.notes;
 
+import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
@@ -18,11 +19,12 @@ public interface NoteDao {
   void update (Note note);
 
   @Delete
-  void Delete (Note note);
+  void delete (Note note);
 
   @Query("DELETE FROM  note_table")
   void deleteAllNotes();
 
   @Query("SELECT * FROM note_table ORDER BY priority DESC")
-  List<Note> getAllNotes();
+  LiveData<List<Note>> getAllNotes();
+
 }

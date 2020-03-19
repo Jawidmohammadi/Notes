@@ -1,5 +1,6 @@
 package com.jawidmohammadi.notes;
 
+import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
@@ -12,6 +13,7 @@ public class Note {
   private String title;
 
   private String description;
+
 
   private int priority;
 
@@ -29,6 +31,10 @@ public class Note {
 
   public int getPriority() {
     return priority;
+  }
+
+  public void setId(int id) {
+    this.id = id;
   }
 
   public Note(String title, String description, int priority) {
